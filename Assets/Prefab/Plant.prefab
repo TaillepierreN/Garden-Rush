@@ -113,3 +113,4 @@ MonoBehaviour:
   _deathTimer: 15
   _plantMaxHeight: 20
   WaterAmount: {fileID: 11400000, guid: 30b511612ff66c74a854b68e32f8830c, type: 2}
+  NumberOfPlant: {fileID: 11400000, guid: d134060c5090d3a43b0660efb157af1b, type: 2}

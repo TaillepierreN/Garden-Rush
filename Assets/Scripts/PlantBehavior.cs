@@ -7,6 +7,7 @@ public class PlantBehavior : MonoBehaviour
     [SerializeField]float _deathTimer;
     [SerializeField]float _plantMaxHeight =20f;
     public WaterAmount WaterAmount;
+    public NumberOfPlants NumberOfPlant;
 
     float _timeRemainingToDie = 0;
     // Start is called before the first frame update
@@ -23,13 +24,11 @@ public class PlantBehavior : MonoBehaviour
         _timeRemainingToDie += Time.deltaTime;
         if(_timeRemainingToDie>=_deathTimer)
         {
+            NumberOfPlant.value -=1;
             Destroy(gameObject);
         }
         }
         
-    }
-    private void OnCollisionEnter(Collision other)
-    {
     }
     private void OnTriggerEnter(Collider other)
     {

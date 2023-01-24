@@ -6,11 +6,14 @@ using UnityEngine.AI;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] GameObject Plant;
-    [SerializeField] GameObject Obstacle;
     [SerializeField] int numberOfPlant;
+        public NumberOfPlants NumberOfPlants;
     Vector3 randCoord;
 
     // Start is called before the first frame update
+    private void Awake() {
+        NumberOfPlants.value = 0;
+    }
     void Start()
     {
 
@@ -18,6 +21,7 @@ public class Spawner : MonoBehaviour
         {
             RandomSpawnCoordinates();
             var plant = Instantiate(Plant, randCoord, Quaternion.identity);
+            NumberOfPlants.value +=1;
 
         }
     }
@@ -35,7 +39,6 @@ public class Spawner : MonoBehaviour
         NavMeshHit hit;
         if (NavMesh.SamplePosition(randCoord, out hit, 4f, 1 <<NavMesh.GetAreaFromName("Walkable")))
         {
-            Debug.Log("hello");
             randCoord = hit.position;
         }
         return randCoord;
