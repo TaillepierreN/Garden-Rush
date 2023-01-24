@@ -8,6 +8,7 @@ public class GardenerManager : MonoBehaviour
 {
     Camera _cam;
     [SerializeField] NavMeshAgent _gardener;
+    public WaterAmount WaterAmount;
     public List<Vector3> targets;
 
 
@@ -15,6 +16,7 @@ public class GardenerManager : MonoBehaviour
     void Start()
     {
         _cam = Camera.main;
+        WaterAmount.WaterLevel = 50;
     }
 
     // Update is called once per frame

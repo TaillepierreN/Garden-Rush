@@ -111,3 +111,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _deathTimer: 15
+  _plantMaxHeight: 20
+  WaterAmount: {fileID: 11400000, guid: 30b511612ff66c74a854b68e32f8830c, type: 2}

@@ -1078,6 +1078,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gardener: {fileID: 1695818228}
+  WaterAmount: {fileID: 11400000, guid: 30b511612ff66c74a854b68e32f8830c, type: 2}
   targets: []
 --- !u!54 &1695818230
 Rigidbody:
