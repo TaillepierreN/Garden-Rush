@@ -13,15 +13,12 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         for (int i = 0; i < numberOfPlant; i++)
         {
             RandomSpawnCoordinates();
             var plant = Instantiate(Plant, randCoord, Quaternion.identity);
-            NavMeshHit hit;
-            if(NavMesh.SamplePosition(plant.transform.position, out hit,1f,NavMesh.AllAreas))
-            {
-                plant.transform.position = hit.position;
-            }
+
         }
     }
 
@@ -34,7 +31,14 @@ public class Spawner : MonoBehaviour
     {
         float randX = Random.Range(-16, 17);
         float randZ = Random.Range(-16, 17);
-        return randCoord =new Vector3(randX,0.5f,randZ); 
+        randCoord = new Vector3(randX, 0.5f, randZ);
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(randCoord, out hit, 4f, 1 <<NavMesh.GetAreaFromName("Walkable")))
+        {
+            Debug.Log("hello");
+            randCoord = hit.position;
+        }
+        return randCoord;
     }
 
 }
