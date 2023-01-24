@@ -114,3 +114,4 @@ MonoBehaviour:
   _plantMaxHeight: 20
   WaterAmount: {fileID: 11400000, guid: 30b511612ff66c74a854b68e32f8830c, type: 2}
   NumberOfPlant: {fileID: 11400000, guid: d134060c5090d3a43b0660efb157af1b, type: 2}
+  score: {fileID: 11400000, guid: f02f8c8470ef70146927688247840d28, type: 2}
