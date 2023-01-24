@@ -43,5 +43,15 @@ public class GardenerManager : MonoBehaviour
         }
 
     }
+    public void SpeedBoost()
+    {
+        _gardener.speed = _gardener.speed * 2;
+        StartCoroutine("StopBoost");
+    }
+    IEnumerator StopBoost()
+    {
+        yield return new WaitForSeconds(5);
+        _gardener.speed = _gardener.speed / 2;
+    }
 
 }
