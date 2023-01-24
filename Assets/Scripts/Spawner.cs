@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Spawner : MonoBehaviour
 {
@@ -15,7 +16,12 @@ public class Spawner : MonoBehaviour
         for (int i = 0; i < numberOfPlant; i++)
         {
             RandomSpawnCoordinates();
-            Instantiate(Plant, randCoord, Quaternion.identity);
+            var plant = Instantiate(Plant, randCoord, Quaternion.identity);
+            NavMeshHit hit;
+            if(NavMesh.SamplePosition(plant.transform.position, out hit,1f,NavMesh.AllAreas))
+            {
+                plant.transform.position = hit.position;
+            }
         }
     }
 
