@@ -33,7 +33,7 @@ public class PlantBehavior : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") && WaterAmount.WaterLevel >0)
+        if (other.CompareTag("Player") && WaterAmount.WaterLevel >0)
         {
             if(gameObject.transform.localScale.y < _plantMaxHeight)
             {
